@@ -3,6 +3,29 @@
 # Automated Project Bootstrapping Script
 # Creates attendance tracker project structure
 
+# Handle Ctrl+C (SIGINT)
+trap cleanup SIGINT
+
+cleanup() {
+
+    echo ""
+    echo "⚠ Script interrupted!"
+
+    # Create archive of current project state
+    tar -czf "${PROJECT}_archive.tar.gz" "$PROJECT"
+
+    # Remove incomplete project folder
+    rm -rf "$PROJECT"
+
+    echo "Archive created: ${PROJECT}_archive.tar.gz"
+    echo "Cleanup completed"
+
+    exit 1
+}
+
+# Automated Project Bootstrapping Script
+# Creates attendance tracker project structure
+
 # Get project name
 read -p "Enter project name: " name
 
@@ -46,3 +69,17 @@ if [ "$answer" = "y" ]; then
     sed -i "s/\"Failure\": [0-9]*/\"Failure\": $failure/" "$PROJECT/Helpers/config.json"
 
 fi
+
+# Environment check
+echo "Checking Python installation..."
+
+if python3 --version >/dev/null 2>&1
+then
+    echo "Python3 is installed"
+else
+    echo "Warning: Python3 not found"
+fi
+
+# Show final structure
+echo "Project created successfully"
+ls -R "$PROJECT"
