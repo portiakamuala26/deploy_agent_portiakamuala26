@@ -39,4 +39,10 @@ if [ "$answer" = "y" ]; then
     # Get failure threshold percentage
     read -p "Enter Failure percentage: " failure
 
+    # Update Warning value inside config.json using sed
+    sed -i "s/\"Warning\": [0-9]*/\"Warning\": $warning/" "$PROJECT/Helpers/config.json"
+
+    # Update Failure value inside config.json using sed
+    sed -i "s/\"Failure\": [0-9]*/\"Failure\": $failure/" "$PROJECT/Helpers/config.json"
+
 fi
