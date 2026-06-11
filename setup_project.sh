@@ -13,7 +13,7 @@ mkdir -p "$PROJECT/Helpers"
 mkdir -p "$PROJECT/reports"
 
 # Create files
-touch "$PROJECT/attendance_checker.py"
+echo "# Attendance Checker Script" > "$PROJECT/attendance_checker.py"
 touch "$PROJECT/Helpers/assets.csv"
 
 # Create config file with default values
