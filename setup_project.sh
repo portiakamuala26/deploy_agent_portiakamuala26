@@ -13,5 +13,12 @@ mkdir -p "$PROJECT/reports"
 
 touch "$PROJECT/attendance_checker.py"
 touch "$PROJECT/Helpers/assets.csv"
-touch "$PROJECT/Helpers/config.json"
+
+cat > "$PROJECT/Helpers/config.json" <<EOF
+{
+  "Warning": 75,
+  "Failure": 50
+}
+EOF
+
 touch "$PROJECT/reports/reports.log"
