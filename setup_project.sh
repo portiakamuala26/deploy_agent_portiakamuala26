@@ -29,3 +29,14 @@ touch "$PROJECT/reports/reports.log"
 
 # Ask user if they want to update thresholds
 read -p "Do you want to update thresholds? (y/n): " answer
+
+# If user chooses yes, collect new threshold values
+if [ "$answer" = "y" ]; then
+
+    # Get warning threshold percentage
+    read -p "Enter Warning percentage: " warning
+
+    # Get failure threshold percentage
+    read -p "Enter Failure percentage: " failure
+
+fi
