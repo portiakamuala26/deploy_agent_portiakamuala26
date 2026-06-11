@@ -20,3 +20,8 @@ Run the script using:
 
 ```bash
 bash setup_project.sh
+
+## Video Explanation
+
+Google Drive Link:
+https://drive.google.com/file/d/1QAW4WScLODyJbuyN06-Op7n8m-CDrYi5/view?usp=sharing
