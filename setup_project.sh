@@ -7,3 +7,6 @@
 read -p "Enter project name: " name
 
 PROJECT="attendance_tracker_$name"
+
+mkdir -p "$PROJECT/Helpers"
+mkdir -p "$PROJECT/reports"
