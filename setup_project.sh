@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PROJECT=""
+
 # Automated Project Bootstrapping Script
 # Creates attendance tracker project structure
 
@@ -11,15 +13,18 @@ cleanup() {
     echo ""
     echo "⚠ Script interrupted!"
 
-    # Create archive of current project state
-    tar -czf "${PROJECT}_archive.tar.gz" "$PROJECT"
+    # Only run if project name was already created
+    if [ -n "$PROJECT" ] && [ -d "$PROJECT" ]; then
 
-    # Remove incomplete project folder
-    rm -rf "$PROJECT"
+        tar -czf "${PROJECT}_archive.tar.gz" "$PROJECT"
+        rm -rf "$PROJECT"
 
-    echo "Archive created: ${PROJECT}_archive.tar.gz"
+        echo "Archive created: ${PROJECT}_archive.tar.gz"
+    else
+        echo "No project created yet. Nothing to archive."
+    fi
+
     echo "Cleanup completed"
-
     exit 1
 }
 
