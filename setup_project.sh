@@ -7,5 +7,3 @@
 read -p "Enter project name: " name
 
 PROJECT="attendance_tracker_$name"
-
-
