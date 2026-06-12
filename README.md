@@ -4,15 +4,15 @@
 This is a shell script that automatically creates a full attendance tracking project structure using Bash automation.
 
 ## How the Script Works
-- Prompts the user for a project name
+- Prompts user for a project name
 - Creates a structured project directory
 - Generates required files and folders automatically
 - Creates a default configuration file (config.json)
 - Allows user to update Warning and Failure thresholds
-- Uses sed to update configuration values dynamically
-- Handles Ctrl+C (SIGINT) to safely archive and clean up incomplete projects
+- Uses sed to update configuration values 
+- Handles Ctrl+C (SIGINT) to archive and clean up incomplete projects
 - Checks if Python3 is installed on the system
-- Displays final project structure
+- Shows final project structure
 
 ## Running the Script
 
